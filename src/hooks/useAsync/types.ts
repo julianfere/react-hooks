@@ -1,6 +1,6 @@
-export interface UseAsyncParams {
-  asyncFunction: (...args: any[]) => Promise<any>;
-  onSuccess?: (data: any) => void;
-  onReject?: (error: any) => void;
+export interface UseAsyncParams<T, E = any> {
+  asyncFunction: (...args: any[]) => Promise<T>;
+  onSuccess?: (data: T) => void;
+  onReject?: (error: E) => void;
   manual?: boolean;
 }
